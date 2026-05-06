@@ -42,5 +42,9 @@ target/
 # Application properties (hides Db password!)
 src/main/resources/application.properties
 
+#Ignore target but keep jar
+target/
+!target/fraud-job-detector-0.0.1-SNAPSHOT.jar
+
 ### VS Code ###
 .vscode/
