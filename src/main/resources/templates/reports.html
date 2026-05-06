@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns=th="http://www.thymeleaf.org">
+	<head>
+		<title>All Reports</title>
+		
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+		        rel="stylesheet">
+	</head>
+	<body class="bg-light">
+		
+	<nav class ="navbar navbar-dark bg-danger">
+		<div class="container">
+			<span class="navbar-brand fw-bold">
+				Fraud Job Detector	
+		        </span>
+		<a href="/" class="btn btn-outline-light btn-sm">
+			 Home
+			 </a>	
+			 </div>	
+		</nav>
+		
+		<div class="container mt-4">
+			<h4 class="mb-3">All Reports</h4>
+			
+		<table class="table table-bordered table -hover bg-white">
+		<thead class="table-danger">
+			<tr>
+				<th>Company</th>
+				<th>Job</th>
+				<th>Link</th>
+				<th>Status</th>
+				</tr>
+				</thead>
+				
+		   <tbody>
+				<tr th:each="report :${reports}">
+					<td th:text="${report.companyName}"></td>
+					<td th:text="${report.jobTitle}"></td>
+					<td th:text="${report.status}"></td>	
+				   
+					<td>
+				<span th:if="${report.status == 'FRAUD'}"
+					class="badge bg-danger">FRAUD</span>
+					
+				<span th:if="${report.status == 'SUSPICIOUS'}"
+				      class="badge bg-warning text-dark">
+				       SUSPICIOUS</span>
+					   
+				<span th:if="${report.status == 'SAFE'}"
+					 class="badge bg-success">SAFE</span>
+					 
+					    <span th:if="${report.status == 'UNVERIFIED'}"
+					        class="badge bg-secondary">
+					             UNVERIFIED</span>
+								 
+				 <span th:if="${report.status == 'LOW_RISK'}"
+					  class="badge bg-info">LOW RISK</span>
+					                </td>
+		    </tr>
+		  </tbody>
+		</table>
+		
+		</div>				
+				      	
+	</body>
+	</html>
