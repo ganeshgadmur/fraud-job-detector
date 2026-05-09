@@ -47,9 +47,6 @@ others avoid similar scams.
 ### Safe Job Result
 ![Safe Result](screenshots/safe.png)
 
-### Admin Panel
-![Admin Panel](screenshots/admin.png)
-
 ### Reports Page
 ![Reports](screenshots/reports.png)
 
